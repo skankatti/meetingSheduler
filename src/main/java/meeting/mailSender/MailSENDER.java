@@ -26,6 +26,8 @@ public class MailSENDER {
 
 	@Autowired
 	Configuration configuration;
+	
+	Integer mailSendCount=0;
 
 	public void sendEmail(String createdByEmail, String meetingWith, String subjeString, String body) {
 
@@ -57,12 +59,14 @@ public class MailSENDER {
 			String html = FreeMarkerTemplateUtils.processTemplateIntoString(t, model);
 
 			helper.setTo(request.getTo());
+			helper.setCc(request.getFrom());
 			helper.setText(html, true);
 			helper.setSubject(request.getSubject());
 			helper.setFrom(request.getFrom());
 			mailSender.send(message);
 
 			response.setMessage("mail send to : " + request.getTo());
+		
 			response.setStatus(Boolean.TRUE);
 		} 
 		catch (MessagingException | IOException | TemplateException e) {

@@ -19,12 +19,11 @@
 							</div>
 							
 							<div style="font-size: 24px; color: #555100;">
-								<br> Sending Email using Spring Boot with <b>FreeMarker
-									template !!! <br>
+								<br> Sending Email using Spring Boot <br>
 							</div>
 							<div>
-								<br> This is a reminder mail to inform you that your meeting 
-								 is going to be start shortly please be available on time<br>
+								<br> This is a  mail to inform you that your meeting 
+								 is Scheduled and to be start shortly please be available on time<br>
 								<br> <br> <b>${Name}</b><br>${Location}<br>
 								<br>
 							</div>

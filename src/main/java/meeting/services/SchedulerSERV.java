@@ -100,8 +100,15 @@ public class SchedulerSERV {
 				model.put("Location", "Pune, INDIA");
 
 				mail.sendTemplateEmail(request, model);
-
-				meetingScheduleREPO.updateMailSentStatus(createdBy, meetingWith, startTime, endTime);
+				detailsOfMeeting.setMailSentCount(detailsOfMeeting.getMailSentCount()+1);
+				System.out.println("detailsOfMeeting.getMailSentCount()--"+detailsOfMeeting.getMailSentCount());
+				if(detailsOfMeeting.getMailSentCount()>1) {
+//					meetingScheduleREPO.updateMailSentStatus(createdBy, meetingWith, startTime, endTime);
+					detailsOfMeeting.setMailSentStatus(true);
+				}
+				
+				meetingScheduleREPO.save(detailsOfMeeting);
+				
 			}
 		}
 

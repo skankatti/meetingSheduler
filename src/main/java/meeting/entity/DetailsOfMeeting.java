@@ -36,6 +36,8 @@ public class DetailsOfMeeting {
 	private String meetingWithEmail;
 
 	private boolean mailSentStatus;
+	
+	private int mailSentCount;
 
 	public int getId() {
 		return id;
@@ -116,14 +118,30 @@ public class DetailsOfMeeting {
 	public void setCreatedByEmail(String createdByEmail) {
 		this.createdByEmail = createdByEmail;
 	}
+	
+	
+
+	public int getMailSentCount() {
+		return mailSentCount;
+	}
+
+	public void setMailSentCount(int mailSentCount) {
+		this.mailSentCount = mailSentCount;
+	}
+
+	public void setMailSentStatus(boolean mailSentStatus) {
+		this.mailSentStatus = mailSentStatus;
+	}
 
 	@Override
 	public String toString() {
 		return "DetailsOfMeeting [id=" + id + ", createdBy=" + createdBy + ", meetingWith=" + meetingWith
 				+ ", meetingDate=" + meetingDate + ", startTime=" + startTime + ", endTime=" + endTime
 				+ ", description=" + description + ", createdByEmail=" + createdByEmail + ", meetingWithEmail="
-				+ meetingWithEmail + ", mailSentStatus=" + mailSentStatus + "]";
+				+ meetingWithEmail + ", mailSentStatus=" + mailSentStatus + ", mailSentCount=" + mailSentCount + "]";
 	}
+
+	
 
 
 
